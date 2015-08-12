@@ -1,7 +1,8 @@
-void delay_ms()
+void delay_ms(unsigned int x)
 {
-	unsigned int c;
-	for(c=1;c!=1000;c++);
+	unsigned int c,i;
+	for(i=1;i<=x;i++)
+		for(c=1;c!=1000;c++);
 
 }
 
@@ -11,23 +12,8 @@ void delay_sec(unsigned int n)
 	for(x=1;x<=n;x++)
 	{
 		for(c=1;c!=100;c++)
-			delay_ms();	
+			delay_ms(1);	
 	}
 }
 
-  /*
-void msec(unsigned int x)
-{
-	while(x!=0)
-		x--;
-}
-
-void sec(unsigned int x)
-{
-	while(x!=0)
-	{
-	x--;
-	msec(1000);
-	}
-}
-*/
+ 
