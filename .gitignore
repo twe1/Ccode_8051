@@ -1,0 +1,11 @@
+*.lst
+*.obj
+*.__i
+*.m51
+prgm1
+*.lnp
+prgm1.plg
+*.uvopt
+prgm1.uvproj
+*.bak
+*.A51
