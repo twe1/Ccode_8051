@@ -1,7 +1,7 @@
 #include<reg51.h>
 #include "delay.h"
 #include "lcd.h"
-#define seg_data P2
+#define seg_data P3
 sbit S1=P1^6;
 sbit S2=P1^7;
 
@@ -19,7 +19,7 @@ void main()
 	S1=1;
 	S2=0;
 	seg_data=seg_tab1[i];
-	//delay_ms(10);
+	delay_sec(1);
 	S1=0;
 	S2=1;
 	seg_data=seg_tab2[i];

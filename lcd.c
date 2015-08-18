@@ -2,9 +2,9 @@
 #include "delay.h"
 #define lcd_dp P0 
 
-sbit RS=P1^0;
-sbit RW=P1^1;
-sbit E=P1^2;
+sbit RS=P2^0;
+sbit RW=P2^1;
+sbit E=P2^2;
 
 void lcd_cmd(unsigned int x)
 {
@@ -22,6 +22,7 @@ void lcd_data(unsigned char y)
 	RW=0;
 	E=1;
 	lcd_dp=y;
+	delay_ms(250);
 	E=0;
 }
 
