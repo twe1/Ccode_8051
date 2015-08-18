@@ -11,19 +11,23 @@ unsigned char seg_tab1[]={0x66,0x66,0x66,0x66,0x66,0XDA,0XB6,0x66,0XB6,0x66,0x66
 unsigned char seg_tab2[]={0xFE,0XB6,0X9C,0X9C,0X8D,0XFC,0XE0,0X8D,0XDA,0X9C,0X66};
 void main()
 {   
-	int i;
+	unsigned int i,j;
 	lcd_init();
 	for(i=0;i<lcd_tab[i]!='\0';i++)
 	{
 	lcd_data(lcd_tab[i]);
-	S1=1;
-	S2=0;
-	seg_data=seg_tab1[i];
-	delay_sec(1);
-	S1=0;
-	S2=1;
-	seg_data=seg_tab2[i];
-	delay_sec(1);
+
+	for(j=0;j<10;j++)
+	{ 
+		S1=1;
+		S2=0;
+		seg_data=seg_tab1[i];
+		delay_ms(70);
+		S1=0;
+		S2=1;
+		seg_data=seg_tab2[i];
+		delay_ms(25);
+	}
 	lcd_cmd(0x02);
 
 	}
